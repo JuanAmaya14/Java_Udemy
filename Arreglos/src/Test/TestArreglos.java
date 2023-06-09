@@ -1,18 +1,14 @@
 package Test;
 
-import java.util.Scanner;
-
 public class TestArreglos {
 
     public static void main(String[] args) {
 
-        int edades[] = new int[3];
-
-        Scanner scanner = new Scanner(System.in);
+        int edades[] = new int[10];
 
         for (int i = 0; i < edades.length; i++){
 
-            edades[i] = scanner.nextInt();
+            edades[i] = (int)(Math.random()*99+1);
 
         }
 

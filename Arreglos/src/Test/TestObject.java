@@ -14,7 +14,7 @@ public class TestObject {
 
         for (int i = 0; i < personas.length; i++) {
 
-            System.out.println(personas[i]);
+            System.out.println(personas);
 
         }
 
