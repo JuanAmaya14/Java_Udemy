@@ -1,7 +1,7 @@
 package Materias;
 
 import Materias.Enum.Materias;
-import Materias.Excepcion.Excepcion;
+import Materias.Excepcion.MiExcepcion;
 import Materias.Notas.Notas;
 
 public class Sociales extends Notas {
@@ -10,7 +10,7 @@ public class Sociales extends Notas {
     private final double total;
 
 
-    public Sociales(int nota1, int nota2, int nota3, int nota4, int nota5) throws Excepcion {
+    public Sociales(double nota1, double nota2, double nota3, double nota4, double nota5) throws MiExcepcion {
         super(nota1, nota2, nota3, nota4, nota5);
         this.total = (nota1 + nota2 + nota3 + nota4 + nota5) / 5;
 

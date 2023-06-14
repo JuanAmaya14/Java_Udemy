@@ -2,7 +2,7 @@ package Estudiante;
 
 import Materias.Enum.Grados;
 import Materias.*;
-import Materias.Excepcion.Excepcion;
+import Materias.Excepcion.MiExcepcion;
 import Materias.Resultado.Resultado;
 
 public class Estudiante {
@@ -16,30 +16,25 @@ public class Estudiante {
     private Ingles ingles;
     private Matematicas matematicas;
     private Sociales sociales;
+    private final Resultado resultado;
 
-    private Estudiante() {
-        this.id = ++Estudiante.contadorId;
-    }
+    public Estudiante(String nombre, String apellido, Grados grado, Espanol espanol, Ingles ingles, Matematicas matematicas, Sociales sociales) throws MiExcepcion {
 
-    private Resultado resultado;
+        if (nombre == "" || nombre == null) {
 
-    public Estudiante(String nombre, String apellido, Grados grado, Espanol espanol, Ingles ingles,
-                      Matematicas matematicas, Sociales sociales) throws Excepcion {
+            throw new MiExcepcion("Falta el nombre del estudiante");
 
-        if(nombre == "" || nombre == null){
+        } else if (apellido == "" || apellido == null) {
 
-            throw new Excepcion("Falta el nombre del estudiante");
+            throw new MiExcepcion("Falta el apellido del estudiante");
 
-        }else if (apellido == "" || apellido == null){
+        } else if (grado == null) {
 
-            throw new Excepcion("Falta el apellido del estudiante");
-
-        }else if (grado == null){
-
-            throw new Excepcion("Falta el grado en el que esta el estudiante");
+            throw new MiExcepcion("Falta el grado en el que esta el estudiante");
 
         }
 
+        this.id = ++Estudiante.contadorId;
         this.nombre = nombre;
         this.apellido = apellido;
         this.grado = grado;
@@ -50,12 +45,6 @@ public class Estudiante {
         this.resultado = new Resultado(espanol, ingles, matematicas, sociales);
 
 
-    }
-
-    public Estudiante(String nombre, String apellido, Grados grado) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.grado = grado;
     }
 
     public int getId() {
@@ -122,7 +111,7 @@ public class Estudiante {
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("\nEstudiante " + id + " {");
-        sb.append(", nombre='").append(nombre).append('\'');
+        sb.append("nombre='").append(nombre).append('\'');
         sb.append(", apellido='").append(apellido).append('\'');
         sb.append(", grado=").append(grado);
         sb.append('}');
@@ -135,7 +124,6 @@ public class Estudiante {
         sb.append("\n}");
         return sb.toString();
     }
-
 
 
 }

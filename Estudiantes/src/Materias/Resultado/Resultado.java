@@ -53,7 +53,7 @@ public class Resultado {
 
         } else if (contador > 2) {
 
-            sb.append("\nDesafortunadamente perdio, nos vemos el otro año bobo hpta JAJAJAJA");
+            sb.append("\nDesafortunadamente perdio");
 
         }
 

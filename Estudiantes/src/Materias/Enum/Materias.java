@@ -2,10 +2,10 @@ package Materias.Enum;
 
 public enum Materias {
 
-    SOCIALES("Luis Enrique"),
-    MATEMATICAS("Martha Gonzales"),
-    ESPANOL("Diana Hernandez"),
-    INGLES("Luz Marina Osorio");
+    SOCIALES("Luis"),
+    MATEMATICAS("Martha"),
+    ESPANOL("Diana"),
+    INGLES("Marina");
 
     private final String profesores;
 
